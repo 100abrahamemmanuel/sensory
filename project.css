@@ -689,3 +689,350 @@ body {
   display: flex; align-items: center; justify-content: center; gap: 12px;
 }
 .footer-dot { opacity: 0.3; }
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — mobile-first, each breakpoint fully self-contained
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── TABLET  768px – 1024px ── */
+@media (max-width: 1024px) {
+  .main { padding: 28px 20px 60px; }
+  .nav  { padding: 12px 20px; }
+  .nav-right { gap: 14px; }
+  .sys-label { display: none; }
+}
+
+/* ── SMALL TABLET / LARGE PHONE  641px – 768px ── */
+@media (max-width: 768px) {
+  .main { padding: 24px 16px 56px; }
+
+  /* nav */
+  .nav { padding: 10px 16px; }
+  .nav-title { font-size: 12px; letter-spacing: 0.1em; }
+  .nav-right { gap: 10px; }
+  .sys-status { display: none; }
+  .clock { font-size: 12px; }
+
+  /* page header */
+  .page-header { margin-bottom: 24px; }
+  .page-title  { font-size: 24px; }
+  .hex-badge   { width: 50px; height: 58px; }
+
+  /* stats */
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .stat-value { font-size: 22px; }
+
+  /* machines */
+  .machines-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* controls */
+  .controls-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .sim-btn, .reset-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 13px;
+  }
+}
+
+/* ── MOBILE  ≤ 640px ── */
+@media (max-width: 640px) {
+  /* ── nav ── */
+  .nav {
+    padding: 10px 14px;
+    gap: 0;
+  }
+  .nav-brand { gap: 8px; }
+  .nav-icon  { width: 28px; height: 28px; border-radius: 6px; }
+  .nav-icon svg { width: 14px; height: 14px; }
+  .nav-title { font-size: 11px; letter-spacing: 0.08em; }
+  .nav-right { gap: 8px; }
+  .sys-status { display: none; }
+  .clock { font-size: 10px; letter-spacing: 0.04em; }
+  .live-badge { padding: 3px 8px; font-size: 9px; gap: 4px; }
+  .live-dot   { width: 5px; height: 5px; }
+
+  /* ── main container ── */
+  .main { padding: 20px 14px 50px; }
+
+  /* ── page header ── */
+  .page-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 12px;
+  }
+  .page-eyebrow { font-size: 9px; letter-spacing: 0.12em; margin-bottom: 4px; }
+  .page-title   { font-size: 19px; letter-spacing: 0.03em; line-height: 1.1; }
+  .hex-badge    { width: 40px; height: 48px; flex-shrink: 0; }
+  .hex-inner    { font-size: 16px; }
+
+  /* ── stats row: 2 columns ── */
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .stat-card  { padding: 12px 12px 10px; }
+  .stat-icon  { font-size: 12px; margin-bottom: 4px; }
+  .stat-label { font-size: 8px; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .stat-value { font-size: 20px; margin-bottom: 8px; }
+
+  /* ── section divider ── */
+  .section-label { gap: 10px; margin-bottom: 12px; }
+  .section-count { display: none; }
+  .section-text  { font-size: 9px; }
+
+  /* ── machine cards: single column ── */
+  .machines-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .machine-card    { padding: 14px 14px 16px; border-radius: var(--radius-md); }
+  .card-header     { margin-bottom: 12px; }
+  .machine-avatar  { width: 36px; height: 36px; font-size: 16px; border-radius: 8px; }
+  .machine-info    { gap: 10px; }
+  .machine-name    { font-size: 10px; letter-spacing: 0.08em; }
+  .machine-id      { font-size: 9px; margin-top: 2px; }
+  .status-badge    { font-size: 8px; padding: 2px 8px; letter-spacing: 0.08em; }
+  .notif-dot       { top: 10px; right: 10px; width: 7px; height: 7px; }
+
+  /* ── metrics grid inside card: 2 cols ── */
+  .metrics-grid  { gap: 6px; }
+  .metric        { padding: 8px 10px; }
+  .metric-label  { font-size: 8px; margin-bottom: 4px; }
+  .metric-value  { font-size: 17px; }
+  .metric-unit   { font-size: 8px; }
+  .meter-bar     { margin-top: 6px; }
+
+  /* ── fault button ── */
+  .view-fault-btn { margin-top: 10px; padding: 8px; font-size: 9px; letter-spacing: 0.1em; }
+
+  /* ── controls ── */
+  .controls-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .sim-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 16px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+  .sim-btn-icon { width: 20px; height: 20px; font-size: 12px; }
+  .reset-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── notification banner ── */
+  .notif-banner {
+    left: 12px;
+    right: 12px;
+    top: 60px;
+    min-width: unset;
+    max-width: unset;
+    width: auto;
+    transform: none;
+    padding: 12px 14px;
+    gap: 12px;
+    border-radius: var(--radius-md);
+  }
+  @keyframes slide-down {
+    from { opacity:0; transform:translateY(-10px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .notif-alert-icon { width: 34px; height: 34px; }
+  .notif-alert-icon svg { width: 15px; height: 15px; }
+  .notif-title { font-size: 12px; }
+  .notif-sub   { font-size: 10px; }
+  .notif-hint  { font-size: 9px; }
+
+  /* ── modal ── */
+  .overlay { align-items: flex-end; padding-bottom: 0; }
+  .modal {
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 22px 16px 28px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+  @keyframes modal-up {
+    from { opacity:0; transform:translateY(40px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .modal-header  { gap: 12px; margin-bottom: 16px; padding-bottom: 14px; }
+  .modal-icon    { width: 38px; height: 38px; }
+  .modal-icon svg { width: 17px; height: 17px; }
+  .modal-title   { font-size: 13px; }
+  .modal-machine { font-size: 9px; }
+  .fault-row     { padding: 8px 12px; }
+  .fault-key     { font-size: 9px; }
+  .fault-val     { font-size: 11px; }
+  .email-note    { font-size: 10px; padding: 9px 12px; margin-bottom: 14px; }
+  .btn-dismiss, .btn-send-email { padding: 11px 10px; font-size: 11px; }
+
+  /* ── toast ── */
+  .toast {
+    left: 12px;
+    right: 12px;
+    bottom: 16px;
+    max-width: unset;
+    font-size: 10px;
+    padding: 10px 14px;
+  }
+
+  /* ── footer ── */
+  .footer {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 9px;
+    margin-top: 36px;
+  }
+  .footer-dot { display: none; }
+}
+
+/* ── SMALL PHONE  ≤ 390px ── */
+@media (max-width: 390px) {
+  .main { padding: 16px 12px 44px; }
+
+  .nav-title { font-size: 10px; }
+  .clock     { display: none; }
+
+  .page-title  { font-size: 16px; }
+  .page-eyebrow { display: none; }
+  .hex-badge   { display: none; }
+
+  .stats-row   { gap: 6px; }
+  .stat-card   { padding: 10px 10px 8px; }
+  .stat-value  { font-size: 18px; }
+  .stat-label  { font-size: 7px; }
+
+  .machine-card   { padding: 12px 12px 14px; }
+  .machine-avatar { width: 32px; height: 32px; font-size: 14px; }
+  .machine-name   { font-size: 9px; }
+  .metric-value   { font-size: 15px; }
+  .metric         { padding: 7px 8px; }
+}
+
+/* ── TOUCH DEVICES: disable hover states that get stuck ── */
+@media (hover: none) and (pointer: coarse) {
+  .machine-card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--border-default);
+    background: var(--bg-card);
+  }
+  .stat-card:hover {
+    border-color: var(--border-default);
+    box-shadow: none;
+  }
+  .sim-btn:hover, .reset-btn:hover {
+    box-shadow: none;
+  }
+}
+
+
+/* ═══════════════════════════════════════
+   EXTRA RESPONSIVENESS BOOST (ADD ONLY)
+   ═══════════════════════════════════════ */
+
+/* Prevent horizontal scroll everywhere */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Make everything scale better */
+img, svg, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve container flexibility */
+.main {
+  width: 100%;
+  max-width: 1120px;
+}
+
+/* Better grid auto-fit (fallback improvement) */
+@media (min-width: 1200px) {
+  .machines-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* Fix nav overflow on very small devices */
+@media (max-width: 480px) {
+  .nav-right {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
+/* Improve button scaling */
+.sim-btn, .reset-btn {
+  min-width: 0;
+  white-space: nowrap;
+}
+
+/* Prevent text overflow */
+.stat-value,
+.metric-value,
+.page-title {
+  word-break: break-word;
+}
+
+/* Ultra small devices (≤320px) */
+@media (max-width: 320px) {
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .machines-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .controls-row {
+    gap: 8px;
+  }
+}
+
+/* Ultra large screens (TV / wide monitors) */
+@media (min-width: 1600px) {
+  .main {
+    max-width: 1400px;
+  }
+
+  .page-title {
+    font-size: 40px;
+  }
+
+  .stat-value {
+    font-size: 28px;
+  }
+}
