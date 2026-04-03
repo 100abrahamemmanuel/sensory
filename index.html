@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Factory Machine Monitor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+<!-- ANIMATED BG CANVAS -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- SCAN LINE OVERLAY -->
+<div class="scanlines"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-brand">
+    <div class="nav-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm1-13h-2v6l5.25 3.15.75-1.23-4-2.42z"/></svg>
+    </div>
+    <span class="nav-title">Factory<span>Monitor</span></span>
+  </div>
+  <div class="nav-right">
+    <div class="sys-status">
+      <span class="sys-label">SYS</span>
+      <span class="sys-val" id="sys-health">NOMINAL</span>
+    </div>
+    <div class="live-badge"><div class="live-dot"></div>Live</div>
+    <div class="clock" id="clock">--:--:--</div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="page-eyebrow">Industrial Control System v2.4</div>
+      <h1 class="page-title">Machine <em>Dashboard</em></h1>
+    </div>
+    <div class="page-header-right">
+      <div class="hex-badge">
+        <svg viewBox="0 0 60 70" width="60" height="70"><polygon points="30,2 58,17 58,53 30,68 2,53 2,17" fill="none" stroke="rgba(42,127,255,0.4)" stroke-width="1.5"/><polygon points="30,10 50,21 50,49 30,60 10,49 10,21" fill="rgba(42,127,255,0.05)" stroke="rgba(42,127,255,0.2)" stroke-width="1"/></svg>
+        <span class="hex-inner">⚙️</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-row" id="stats-row">
+    <div class="stat-card">
+      <div class="stat-icon">◈</div>
+      <div class="stat-label">Machines Online</div>
+      <div class="stat-value ok" id="stat-online">4 / 4</div>
+      <div class="stat-bar"><div class="stat-bar-fill" id="stat-bar-online" style="width:100%"></div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">⚠</div>
+      <div class="stat-label">Active Faults</div>
+      <div class="stat-value ok" id="stat-faults">0</div>
+      <div class="stat-bar"><div class="stat-bar-fill fault-fill" id="stat-bar-faults" style="width:0%"></div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">✉</div>
+      <div class="stat-label">Alerts Sent</div>
+      <div class="stat-value" id="stat-alerts">0</div>
+      <div class="stat-bar"><div class="stat-bar-fill accent-fill" id="stat-bar-alerts" style="width:0%"></div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">◷</div>
+      <div class="stat-label">Session Uptime</div>
+      <div class="stat-value ok" id="stat-uptime">0m 0s</div>
+      <div class="stat-bar"><div class="stat-bar-fill ok-fill" style="width:100%"></div></div>
+    </div>
+  </div>
+
+  <!-- SECTION LABEL -->
+  <div class="section-label">
+    <span class="section-line"></span>
+    <span class="section-text">Machine Units</span>
+    <span class="section-count" id="machine-count">4 units monitored</span>
+    <span class="section-line"></span>
+  </div>
+
+  <!-- MACHINE CARDS -->
+  <div class="machines-grid" id="machines-grid"></div>
+
+  <!-- CONTROLS -->
+  <div class="controls-row">
+    <button class="sim-btn" onclick="simulateFault()">
+      <span class="sim-btn-icon">!</span>
+      Simulate Fault
+    </button>
+    <button class="reset-btn" onclick="resetAll()">
+      <span>↺</span> Reset All
+    </button>
+  </div>
+
+  <div class="footer">
+    <span>Factory Monitoring System</span>
+    <span class="footer-dot">·</span>
+    <span>All sensor data simulated</span>
+    <span class="footer-dot">·</span>
+    <span>Refresh: 1.8s</span>
+  </div>
+</div>
+
+<script src="project.js"></script>
+<script src="bg.js"></script>
+</body>
+</html>
